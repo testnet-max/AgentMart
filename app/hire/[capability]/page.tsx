@@ -206,7 +206,7 @@ export default function HirePage({ params }: { params: Promise<{ capability: str
               topics: log.topics,
             });
             
-            if (decoded.eventName === 'JobCreated' && decoded.args.jobId) {
+            if (decoded.eventName === 'JobCreated' && decoded.args && 'jobId' in decoded.args && decoded.args.jobId) {
               const extractedJobId = decoded.args.jobId as bigint;
               console.log('✅ Job ID extracted from event:', extractedJobId.toString());
               setJobId(extractedJobId);
