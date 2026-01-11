@@ -440,11 +440,11 @@ export default function HirePage({ params }: { params: Promise<{ capability: str
                     <p className="text-purple-600 text-xs sm:text-sm mb-2">
                       {jobId ? `Job ID: ${jobId.toString()}` : 'Fetching job ID...'}
                     </p>
-                    {jobData && Array.isArray(jobData) && (
+                    {jobData && Array.isArray(jobData) ? (
                       <p className="text-purple-500 text-xs mt-1">
-                        Status: {['Pending', 'Accepted', 'Completed', 'Approved', 'Rejected', 'Cancelled'][Number(jobData[7])] || 'Unknown'}
+                        Status: {['Pending', 'Accepted', 'Completed', 'Approved', 'Rejected', 'Cancelled'][Number((jobData as unknown[])[7])] || 'Unknown'}
                       </p>
-                    )}
+                    ) : null}
                   </div>
                 ) : step === 'complete' ? (
                   <div className="bg-lime-50 border-2 border-lime-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center">
