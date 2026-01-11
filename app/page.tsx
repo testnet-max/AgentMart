@@ -379,7 +379,7 @@ export default function Home() {
               <Link
                 key={index}
                 href={`/hire/${agent.capability}`}
-                className={`block bg-gradient-to-br ${agent.color} rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-lg hover:scale-[1.02] transition-all group relative overflow-hidden`}
+                className={`block bg-gradient-to-br ${agent.gradient} rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-lg hover:scale-[1.02] transition-all group relative overflow-hidden`}
               >
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-3">
