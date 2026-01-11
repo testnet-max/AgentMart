@@ -26,12 +26,16 @@ export default function FaucetPage() {
   });
 
   const { writeContract, data: hash } = useWriteContract();
-  const { isLoading } = useWaitForTransactionReceipt({ 
+  const { isLoading, isSuccess } = useWaitForTransactionReceipt({ 
     hash,
-    onSuccess: () => {
+  });
+
+  // Refetch balance when transaction is successful
+  useEffect(() => {
+    if (isSuccess) {
       refetch();
     }
-  });
+  }, [isSuccess, refetch]);
 
   const handleMint = () => {
     writeContract({
