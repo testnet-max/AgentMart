@@ -8,8 +8,8 @@ export const getContracts = () => {
   };
 };
 
-// ABIs - will be imported from the parent abis folder
-export { default as MockMNEEABI } from '../../abis/MockMNEE.json';
-export { default as AgentRegistryABI } from '../../abis/AgentRegistry.json';
-export { default as JobEscrowABI } from '../../abis/JobEscrow.json';
+// ABIs - imported from local abis folder
+export { default as MockMNEEABI } from '../abis/MockMNEE.json';
+export { default as AgentRegistryABI } from '../abis/AgentRegistry.json';
+export { default as JobEscrowABI } from '../abis/JobEscrow.json';
 
